@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuoteAI - Coming Soon</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Use the Inter font family defined in the head */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple animation for the countdown numbers */
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .timer-pop {
+            animation: pop 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="flex flex-col min-h-screen">
+        <!-- Header Section -->
+        <header class="p-4 sm:p-6">
+            <div class="container mx-auto flex items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.023.501.05.75.082m.75.082a24.301 24.301 0 014.5 0m4.5 0a24.301 24.301 0 01-4.5 0m-4.5 0v5.714c0 .597.237 1.17.659 1.591L12 14.5m9.75-8.636c.249.023.498.05.748.082m.748.082a24.301 24.301 0 01-4.5 0m4.5 0a24.301 24.301 0 01-4.5 0m-4.5 0v5.714c0 .597.237 1.17.659 1.591L19 14.5M5 14.5a2.25 2.25 0 01-2.25-2.25V7.896c0-.63.252-1.234.7-1.697l4.5-4.5c.447-.447 1.067-.7 1.697-.7h.008c.63 0 1.25.253 1.697.7l4.5 4.5c.448.447.7 1.066.7 1.697v4.354a2.25 2.25 0 01-2.25 2.25M5 14.5v5.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125v-5.25M5 14.5h14" />
+                    </svg>
+                    <span class="text-2xl font-bold">QuoteAI</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow flex items-center justify-center text-center p-4">
+            <div class="container mx-auto max-w-4xl">
+                <!-- Main Headline -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                    Something <span class="text-blue-600">Amazing</span> is Coming Soon
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="mt-4 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
+                    We're working hard to launch our new platform. Get ready to transform your construction floorplans into professional quotes in seconds. Enter your email below to be notified when we go live.
+                </p>
+
+                <!-- Countdown Timer -->
+                <div id="countdown" class="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
+                    <div class="bg-white/60 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-md border border-slate-200">
+                        <div id="days" class="text-4xl sm:text-5xl font-bold text-blue-600">00</div>
+                        <div class="text-sm font-medium text-slate-500 uppercase tracking-wider mt-1">Days</div>
+                    </div>
+                    <div class="bg-white/60 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-md border border-slate-200">
+                        <div id="hours" class="text-4xl sm:text-5xl font-bold text-blue-600">00</div>
+                        <div class="text-sm font-medium text-slate-500 uppercase tracking-wider mt-1">Hours</div>
+                    </div>
+                    <div class="bg-white/60 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-md border border-slate-200">
+                        <div id="minutes" class="text-4xl sm:text-5xl font-bold text-blue-600">00</div>
+                        <div class="text-sm font-medium text-slate-500 uppercase tracking-wider mt-1">Minutes</div>
+                    </div>
+                    <div class="bg-white/60 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-md border border-slate-200">
+                        <div id="seconds" class="text-4xl sm:text-5xl font-bold text-blue-600">00</div>
+                        <div class="text-sm font-medium text-slate-500 uppercase tracking-wider mt-1">Seconds</div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="mt-10 sm:mt-12">
+                    <a href="mailto:info@quoteai.pro" class="inline-block bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-300 transform hover:scale-105">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="p-4 sm:p-6">
+            <div class="container mx-auto text-center text-slate-500">
+                &copy; <span id="year"></span> QuoteAI. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // --- COUNTDOWN TIMER SCRIPT ---
+
+        // Set the date we're counting down to (e.g., 30 days from now)
+        const countDownDate = new Date();
+        countDownDate.setDate(countDownDate.getDate() + 30);
+
+        // Get elements
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        
+        // Update the count down every 1 second
+        const x = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Function to add leading zero and update element
+            const updateElement = (el, value) => {
+                const formattedValue = value < 10 ? '0' + value : value;
+                if (el.innerText !== formattedValue) {
+                    el.innerText = formattedValue;
+                    el.classList.add('timer-pop');
+                    setTimeout(() => el.classList.remove('timer-pop'), 900);
+                }
+            };
+
+            // Display the result in the elements
+            updateElement(daysEl, days);
+            updateElement(hoursEl, hours);
+            updateElement(minutesEl, minutes);
+            updateElement(secondsEl, seconds);
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById('countdown').innerHTML = '<div class="col-span-4 text-2xl font-bold text-green-600">We are live!</div>';
+            }
+        }, 1000);
+
+        // --- FOOTER YEAR SCRIPT ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
